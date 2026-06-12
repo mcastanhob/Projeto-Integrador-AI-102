@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header class="hero">
+        <h1>Recipe Assistant</h1>
+        <p>Turn everyday ingredients into memorable meals.</p>
+    </header>
+
+    <div class="container">
+        <section class="card input-section">
+            <h2>Create Recipe</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="recipeType">Recipe Type</label>
+                    <select id="recipeType">
+                        <option>Sweet</option>
+                        <option>Savory</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="prepTime">Preparation Time (minutes)</label>
+                    <input type="number" id="prepTime" value="30">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="ingredients">Available Ingredients</label>
+                <textarea id="ingredients" placeholder="Eggs, Flour, Butter, Milk, Sugar..."></textarea>
+            </div>
+
+            <button id="generateBtn">Generate Recipe</button>
+        </section>
+
+        <section class="card output-section">
+            <h2>Your Recipe</h2>
+            <div id="recipeOutput">
+                <span class="placeholder-text">Your tailored recipe will appear here.</span>
+            </div>
+            <button id="readBtn">Read Recipe</button>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
